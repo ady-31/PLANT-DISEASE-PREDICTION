@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+/* Light theme overrides for the Plant Disease Prediction app */
+body{
+    background-color: #f8fafc; /* very light gray */
+    color: #1f2937; /* dark slate */
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+.navbar{
+    height: 4rem;
+    top: 0;
+    background-color: #ffffff !important; /* white */
+    box-shadow: 0 2px 4px rgba(15,23,42,0.06);
+}
+
+.navbar-brand{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: #0f5132; /* dark green */
+}
+
+.foot{
+    background-color: #0f5132 !important; /* dark green footer */
+    color: #ffffff;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+/* Container and layout
+   Keep original layout sizes but adjust visual colors */
+.sub{
+    margin: 20px;
+    display: flex;
+}
+.sub-one{
+    display: flex;
+    width: 50%;
+}
+.vl{
+    margin-top: 10px;
+    border-left: 1px solid #e6e9ee;
+    height: 65%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+}
+.sub-two{
+    width: 50%;
+}
+.plant-img{
+    margin-top: 50px;
+    height: 20rem;
+}
+.image-section, .img-responsive{
+    border-radius: 8px;
+    margin-left: 10px;
+    height: 170px !important;
+    width: 185px !important;
+    background: #ffffff;
+    box-shadow: 0 1px 3px rgba(15,23,42,0.06);
+}
+h2, .upl{
+    margin-top: 1.15rem;
+    padding-left: 30px;
+    font-weight: 600;
+    font-family: 'Inconsolata', monospace;
+    font-size: 2rem;
+    color: #0f5132; /* accent green */
+}
+
+.intro-content{
+    padding-top: 1.7rem;
+    padding-left: 1.2rem;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #374151; /* gray-700 */
+}
+
+#imageUpload, .btn{
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    border: none;
+    color: #ffffff;
+    background-color: #198754; /* bootstrap success green */
+}
+.btn{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.btn:hover{
+    background-color: #146c43;
+}
+
+#result{
+    margin-top: 1.4rem;
+    color: #0f5132;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Loader (keep neutral) */
+.loader {
+    margin-top: 20px;
+    margin-left: 37px;
+    border: 8px solid #f3f3f3 !important;
+    border-top: 8px solid #198754 !important;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive tweaks similar to original */
+@media (max-width: 480px){
+    center{ margin-top: 4rem; }
+    .navbar{ overflow: hidden; width:437px; position:fixed; }
+    .sub{ margin-top: 3rem; width:437px; margin: 0px; display: block; }
+    h2{ padding-left: 0px; margin-top: 2.5rem; }
+    .sub-one{ width:90%; }
+    .sub-one-one{ visibility: hidden; width: 0%; }
+    .intro-content{ margin: 0; padding: 0; }
+    .vl{ visibility: hidden; width: 0%; }
+    .sub-two{ width: 100%; }
+    .upl{ padding-left: 0px; margin-top: 3.5rem; }
+    .image-section, .img-responsive{ margin-left:0px; height: 160px !important; width: 165px !important; }
+    #imageUpload, .btn{ margin-left: 0rem; }
+    body { margin: 0; }
+    .plant-img{ margin-top: 0px; height: 20rem; }
+    .loader{ margin-left: 0px; }
+    #result{ font-size: 1.2rem; margin-top: 1rem; }
+    footer{ height:3.5rem; margin-bottom: -1rem; }
+    .foot{ padding-top: 8px; }
+}

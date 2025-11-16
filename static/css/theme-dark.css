@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap');
+
+/* Dark / Black theme for Plant Disease Prediction */
+body{
+    background-color: #050505; /* near black */
+    color: #e6eef2; /* off-white */
+    margin: 0;
+    font-family: 'Inconsolata', monospace;
+}
+
+.navbar{
+    height: 4rem;
+    top: 0;
+    background-color: #0b0b0b !important; /* black */
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.navbar-brand{
+    font-family: 'Alumni Sans Pinstripe', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1.2px;
+    color: #8ef27a; /* neon green accent */
+}
+
+.foot{
+    background-color: #0b0b0b !important;
+    color: #e6eef2;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+    text-align: center;
+    width: 100%;
+}
+
+.sub{
+    margin: 20px;
+    display: flex;
+}
+.sub-one{
+    display: flex;
+    width: 50%;
+}
+.vl{
+    margin-top: 10px;
+    border-left: 1px solid rgba(255,255,255,0.06);
+    height: 65%;
+    position: absolute;
+    left: 50%;
+    margin-left: -3px;
+}
+.sub-two{
+    width: 50%;
+}
+.plant-img{
+    margin-top: 50px;
+    height: 20rem;
+    filter: brightness(1.05) contrast(1.05);
+}
+.image-section, .img-responsive{
+    border-radius: 8px;
+    margin-left: 10px;
+    height: 170px !important;
+    width: 185px !important;
+    background: #0b0b0b;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.6) inset, 0 6px 18px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+}
+
+h2, .upl{
+    margin-top: 1.15rem;
+    padding-left: 30px;
+    font-weight: 600;
+    font-family: 'Inconsolata', monospace;
+    font-size: 2rem;
+    color: #8ef27a; /* accent */
+}
+
+.intro-content{
+    padding-top: 1.7rem;
+    padding-left: 1.2rem;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #cbd5e1; /* muted white */
+}
+
+#imageUpload, .btn{
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+    font-family: 'Inconsolata', monospace;
+    font-weight: bold;
+    border: none;
+    color: #050505;
+    background-color: #8ef27a; /* neon green */
+}
+.btn{
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.btn:hover{
+    background-color: #67cf4f;
+}
+
+#result{
+    margin-top: 1.4rem;
+    color: #e6eef2;
+    font-family: 'Inconsolata', monospace;
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+.loader {
+    margin-top: 20px;
+    margin-left: 37px;
+    border: 8px solid rgba(255,255,255,0.04) !important;
+    border-top: 8px solid #8ef27a !important;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive tweaks similar to original */
+@media (max-width: 480px){
+    center{ margin-top: 4rem; }
+    .navbar{ overflow: hidden; width:437px; position:fixed; }
+    .sub{ margin-top: 3rem; width:437px; margin: 0px; display: block; }
+    h2{ padding-left: 0px; margin-top: 2.5rem; }
+    .sub-one{ width:90%; }
+    .sub-one-one{ visibility: hidden; width: 0%; }
+    .intro-content{ margin: 0; padding: 0; }
+    .vl{ visibility: hidden; width: 0%; }
+    .sub-two{ width: 100%; }
+    .upl{ padding-left: 0px; margin-top: 3.5rem; }
+    .image-section, .img-responsive{ margin-left:0px; height: 160px !important; width: 165px !important; }
+    #imageUpload, .btn{ margin-left: 0rem; }
+    body { margin: 0; }
+    .plant-img{ margin-top: 0px; height: 20rem; }
+    .loader{ margin-left: 0px; }
+    #result{ font-size: 1.2rem; margin-top: 1rem; }
+    footer{ height:3.5rem; margin-bottom: -1rem; }
+    .foot{ padding-top: 8px; }
+}

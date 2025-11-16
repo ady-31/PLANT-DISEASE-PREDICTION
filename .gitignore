@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+.env
+
+# IDEs
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data / model files (large)
+*.h5
+PlantDNet.h5
+uploads/
+
+# Logs
+*.log
+
+# pip
+pip-log.txt
+
+# Byte-compiled / optimized / DLL files
+*.so
+*.dylib
+
+# Coverage
+.coverage
+htmlcov/
+
+# Jupyter
+.ipynb_checkpoints/

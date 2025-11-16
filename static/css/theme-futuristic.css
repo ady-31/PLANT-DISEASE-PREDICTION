@@ -1,0 +1,115 @@
+/* Futuristic, minimalistic, neon-glass theme */
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;600&display=swap');
+
+:root{
+  --bg:#040405;
+  --panel: rgba(255,255,255,0.03);
+  --glass: rgba(255,255,255,0.06);
+  --accent1: linear-gradient(135deg,#8ef27a 0%, #5bf0d2 60%);
+  --neon: #8ef27a;
+  --soft: rgba(142,242,122,0.08);
+  --muted:#aeb9c2;
+  --glass-blur: 8px;
+  --card-shadow: 0 6px 30px rgba(0,0,0,0.75);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%;}
+body{
+  margin:0;
+  background: radial-gradient(1200px 600px at 10% 20%, rgba(94,255,173,0.03), transparent),
+              radial-gradient(900px 500px at 90% 80%, rgba(91,240,210,0.02), transparent),
+              var(--bg);
+  color:var(--muted);
+  font-family:'Inconsolata', monospace;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  transition:background 400ms ease, color 300ms ease;
+}
+
+/* navbar as glass panel with neon accent */
+.navbar{
+  height:72px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+}
+.navbar-brand{
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight:600;
+  letter-spacing:2px;
+  color:var(--neon);
+  font-size:20px;
+  display:inline-block;
+  transform: translateZ(0);
+}
+
+.container{padding:0 2rem}
+
+/* Main layout hints */
+.sub{margin:28px;display:flex;gap:2rem;align-items:flex-start}
+.sub-one{width:48%;display:flex;align-items:center}
+.sub-two{width:48%;position:relative}
+.vl{display:block;width:1px;height:60%;background:rgba(255,255,255,0.03);position:absolute;left:50%;transform:translateX(-50%);}
+
+/* Card / intro area with subtle glass */
+.sub-one-one{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;
+  padding:28px;
+  box-shadow:var(--card-shadow);
+  backdrop-filter: blur(10px);
+}
+.plant-img{
+  height:20rem;
+  border-radius:12px;
+  transition: transform 400ms cubic-bezier(.2,.9,.2,1), filter 400ms;
+  transform-style: preserve-3d;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.8), 0 2px 10px rgba(0,0,0,0.6);
+}
+.plant-img:hover{transform: translateY(-8px) scale(1.03);filter:brightness(1.06)}
+
+/* Upload card */
+.sub-two{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.015), rgba(255,255,255,0.01));backdrop-filter: blur(8px);box-shadow:var(--card-shadow)}
+.upl{color:var(--neon);font-size:1.6rem;margin:0 0 8px 0}
+
+input[type=file]{display:inline-block;padding:10px 14px;border-radius:10px;background:transparent;border:1px dashed rgba(255,255,255,0.04);color:var(--muted);cursor:pointer}
+
+.btn{
+  --btn-bg: linear-gradient(90deg,#6df0b6,#4de6d0);
+  padding:12px 20px;border-radius:12px;border:none;color:#040405;font-weight:700;cursor:pointer;
+  background:var(--btn-bg);box-shadow:0 6px 20px rgba(78,231,171,0.12), 0 2px 6px rgba(0,0,0,0.6);
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+.btn:hover{transform: translateY(-4px);box-shadow:0 18px 40px rgba(78,231,171,0.12);}
+
+#result{margin-top:1.4rem;color:var(--neon);font-weight:700;font-size:1.2rem}
+
+/* Neon loader */
+.loader{margin-top:20px;margin-left:37px;border:8px solid rgba(255,255,255,0.03);border-top:8px solid rgba(142,242,122,0.98);border-radius:50%;width:50px;height:50px;animation:spin 1s linear infinite}
+@keyframes spin{0%{transform:rotate(0)}100%{transform:rotate(360deg)}}
+
+/* small micro-animations */
+.fade-in{animation:fadeInUp .6s ease both}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+/* result glow */
+#result::after{content:'';display:block;height:6px;width:40%;margin-top:8px;background:linear-gradient(90deg,rgba(142,242,122,0.18),rgba(91,240,210,0.08));border-radius:6px;filter:blur(6px);}
+
+/* responsive */
+@media (max-width:780px){
+  .sub{display:block;margin:18px}
+  .sub-one,.sub-two{width:100%}
+  .vl{display:none}
+  .plant-img{height:16rem}
+}
+
+/* small utilities */
+.center{display:flex;align-items:center;justify-content:center}
+.card-float{transition:transform 400ms;}
+.card-float:hover{transform:translateY(-6px) rotateX(1deg)}
+
+/* subtle focus outline for accessibility */
+:focus{outline:2px solid rgba(142,242,122,0.14);outline-offset:3px}
